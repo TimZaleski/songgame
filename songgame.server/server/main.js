@@ -12,6 +12,7 @@ const port = process.env.PORT || 3000
 
 // Establish Socket
 Socket.setIO(io)
+Startup.SpotifyAuth()
 Startup.ConfigureGlobalMiddleware(app)
 Startup.ConfigureRoutes(app)
 
