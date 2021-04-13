@@ -1,0 +1,16 @@
+
+  {
+    "name": "songgame",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "npm run setup:client && npm run setup:server && npm run build:client",
+      "setup:client": "cd songgame.client && npm i",
+      "setup:server": "cd songgame.server && npm i",
+      "build:client": "npm run --prefix songgame.client build",
+      "start": "node songgame.server/index.js"
+    },
+    "engines": {
+      "node": "^14.15.4"
+    }
+  }
+  
