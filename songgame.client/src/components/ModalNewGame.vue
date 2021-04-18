@@ -58,7 +58,7 @@
 </template>
 <script>
 import { reactive } from 'vue'
-import { keepService } from '../services/KeepService'
+import { gameService } from '../services/GameService'
 import { closeModals } from '../utils/Modal'
 export default {
   setup() {
