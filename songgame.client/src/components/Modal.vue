@@ -6,7 +6,7 @@
     <div id="myModal-clickoff" @click="closeModals"></div>
     <div id="myModal-container">
       <!-- Insert all modal components here with their respective v-if's -->
-      <modal-keep v-if="modalChoice.newGame"></modal-keep>
+      <modal-new-game v-if="modalChoice.newGame"></modal-new-game>
     </div>
   </div>
 </template>
