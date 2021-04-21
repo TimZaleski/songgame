@@ -21,16 +21,18 @@
         <div class="col-12 my-1">
           <label for="songLength">Song Length</label><br>
           <div class="form-group">
+            <form name="myform" oninput="songLengthValue.value = songLength.valueAsNumber">
             <input v-model="form.length"
                    type="range"
                    min="5"
                    max="30"
-                   value="30"
                    class="form-control"
                    name="songLength"
                    id="songLength"
                    aria-describedby="helpId"
             >
+             <output name="songLengthValue" for="songLength" >30</output>
+            </form>
           </div>
         </div>
       </div>
@@ -52,7 +54,7 @@ import { closeModals } from '../utils/Modal'
 export default {
   setup() {
     const form = reactive({
-      length: '',
+      length: 30,
       url: ''
     })
     const create = () => { gameService.createGame(form); closeModals() }
