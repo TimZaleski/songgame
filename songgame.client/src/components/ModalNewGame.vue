@@ -6,41 +6,30 @@
           <h1>New Game</h1>
         </div>
         <div class="col-12 my-1">
-          <label for="description">Name</label><br>
+          <label for="url">Spotify Url</label><br>
           <div class="form-group">
-            <input v-model="form.name"
+            <input v-model="form.url"
                    type="text"
                    class="form-control"
-                   name="name"
-                   id="name"
-                   aria-describedby="helpId"
-                   placeholder="Name..."
-            >
-          </div>
-        </div>
-        <div class="col-12 my-1">
-          <label for="img">Image Url</label><br>
-          <div class="form-group">
-            <input v-model="form.img"
-                   type="text"
-                   class="form-control"
-                   name="img"
-                   id="img"
+                   name="url"
+                   id="url"
                    aria-describedby="helpId"
                    placeholder="URL..."
             >
           </div>
         </div>
         <div class="col-12 my-1">
-          <label for="description">Description</label><br>
+          <label for="songLength">Song Length</label><br>
           <div class="form-group">
-            <input v-model="form.description"
-                   type="text"
+            <input v-model="form.length"
+                   type="range"
+                   min="5"
+                   max="30"
+                   value="30"
                    class="form-control"
-                   name="description"
-                   id="description"
+                   name="songLength"
+                   id="songLength"
                    aria-describedby="helpId"
-                   placeholder="Keep Description..."
             >
           </div>
         </div>
@@ -51,7 +40,7 @@
               class="myModal-button"
               @click="create"
       >
-        Create
+        Start Game
       </button>
     </div>
   </div>
@@ -63,9 +52,8 @@ import { closeModals } from '../utils/Modal'
 export default {
   setup() {
     const form = reactive({
-      name: '',
-      description: '',
-      img: ''
+      length: '',
+      url: ''
     })
     const create = () => { gameService.createGame(form); closeModals() }
     return { form, create }
